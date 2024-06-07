@@ -44,7 +44,12 @@ const Component = ({ survey }: Fields) => {
             />
           </label>
         ))}
-        <button type="submit">submit</button>
+        <button
+          type="submit"
+          className="btn btn-warning mt-10 btn-wide text-center"
+        >
+          submit
+        </button>
       </Form>
     </div>
   );
