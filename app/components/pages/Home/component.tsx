@@ -10,7 +10,7 @@ const Component = ({ surveys }: Fields) => {
         <div key={i}>
           {survey.title}
           <a href={`/survey/${survey.title}`}>take it</a>
-          <button>view results</button>
+          <a href={`/results/${survey.title}`}>view results</a>
         </div>
       ))}
     </div>
