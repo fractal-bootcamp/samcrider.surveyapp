@@ -23,7 +23,7 @@ export const action: ActionFunction = async ({ request }) => {
     });
   });
 
-  return redirect("/success");
+  return redirect("/");
 };
 
 const Page = () => {

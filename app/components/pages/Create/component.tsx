@@ -5,6 +5,7 @@ const Component = ({ onClick, questions }: Fields) => {
   return (
     <div>
       <h1>Create a survey</h1>
+      <a href="/">go home</a>
 
       <Form method="post">
         <label>name</label>
