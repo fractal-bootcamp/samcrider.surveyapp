@@ -55,7 +55,7 @@ export const action: ActionFunction = async ({ request, params }) => {
     return console.error(e);
   }
 
-  return redirect("/success");
+  return redirect(`/success/${surveyWithQuestions.title}`);
 };
 
 const Page = () => {

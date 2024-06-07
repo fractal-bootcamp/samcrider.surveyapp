@@ -4,6 +4,7 @@ const Component = ({ survey }: Fields) => {
   return (
     <div>
       <h1>{survey.title}</h1>
+      <a href="/">go home</a>
       <div>
         {survey.questions.map((question, i) => (
           <div key={i}>
