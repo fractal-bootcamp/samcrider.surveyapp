@@ -3,19 +3,6 @@ import { Fields } from "./types";
 
 const Component = ({ survey }: Fields) => {
   return (
-    // <div>
-    //   <h1>{survey.title}</h1>
-    //   <a href="/">Go home</a>
-    //   <Form method="post">
-    //     {survey.questions.map((q) => (
-    //       <div key={q.id}>
-    //         <label>{q.question}</label>
-    //         <input type="text" name={q.question} />
-    //       </div>
-    //     ))}
-    //     <button type="submit">submit</button>
-    //   </Form>
-    // </div>
     <div className="flex flex-col items-center gap-10 p-10 h-[100%]">
       <div className="text-2xl font-bold uppercase w-[100%]">Total Survey</div>
       <div className="flex flex-row justify-evenly">
