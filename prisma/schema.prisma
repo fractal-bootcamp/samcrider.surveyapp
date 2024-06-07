@@ -13,11 +13,49 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Surveys
+// Answer
+model Answer {
+  id          String @id @default(cuid())
+  answer      String
+  createdAt   DateTime @default(now())
+
+  //  foreign keys
+  questionId  String?
+
+  // relationships
+  question    Question? @relation(fields: [questionId], references: [id])
+
+  @@map("answer")
+}
+
+// Question
+
+model Question {
+  id          String @id @default(cuid())
+  question    String
+  createdAt   DateTime @default(now())
+
+
+  // foreign keys
+  surveyId    String?
+
+  // relationships
+  survey      Survey? @relation(fields: [surveyId], references: [id])
+  answers     Answer[]
+
+  @@map("question")
+}
+
+// Survey
 
 model Survey {
-  id    String @id @default(cuid())
-  title   String
+  id          String @id @default(cuid())
+  title       String @unique
+  createdAt   DateTime @default(now())
+
+
+  // relationships
+  questions   Question[]
 
   @@map("survey")
 }
