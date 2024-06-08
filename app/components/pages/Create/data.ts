@@ -3,6 +3,8 @@ import { Question } from "./types";
 
 export const useCreatePageData = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
+  const [title, setTitle] = useState<string>("");
+  const [question, setQuestion] = useState<string>("");
 
   const handleAddQuestion = () => {
     setQuestions((prev) => {
@@ -16,5 +18,12 @@ export const useCreatePageData = () => {
     });
   };
 
-  return { questions, handleAddQuestion };
+  return {
+    questions,
+    handleAddQuestion,
+    title,
+    setTitle,
+    question,
+    setQuestion,
+  };
 };
