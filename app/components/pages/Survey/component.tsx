@@ -16,7 +16,7 @@ const Component = ({ survey, answers, setAnswers }: Fields) => {
           Go Home
         </a>
       </div>
-      <div className="divider divider-secondary text-accent divider-start mx-10 mt-10 uppercase">
+      <div className="divider divider-secondary text-accent divider-start mx-10 mt-10">
         {survey.title}
       </div>
       <Form method="post" className="flex flex-col items-center w-[100%]">

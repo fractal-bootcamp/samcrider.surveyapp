@@ -12,7 +12,7 @@ const Component = ({ surveys }: Fields) => {
           Wondering what to do now that you're here? Take or Create baby!
         </div>
         <a className="btn btn-warning" href="/create">
-          Create a survey
+          Create a Survey
         </a>
       </div>
 

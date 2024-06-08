@@ -26,8 +26,8 @@ const Component = ({
         </a>
       </div>
 
-      <div className="divider divider-secondary divider-start mx-10 mt-10 uppercase text-accent">
-        Create a survey
+      <div className="divider divider-secondary divider-start mx-10 mt-10 text-accent">
+        Create a Survey
       </div>
 
       <Form method="post" className="flex flex-col items-center w-[100%]">
