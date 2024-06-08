@@ -16,14 +16,14 @@ const Component = ({ survey }: Fields) => {
           Go Home
         </a>
       </div>
-      <div className="divider divider-secondary text-accent divider-start mx-10 mt-10 uppercase">
+      <div className="divider divider-secondary text-accent divider-start mx-10 mt-10">
         {survey.title}
       </div>
       <div className="text-2xl font-bold text-accent">
         Your Survey Response Has Been Recorded!
       </div>
       <a href={`/results/${survey.title}`} className="btn btn-neutral">
-        view survey results
+        View Survey Results
       </a>
     </div>
   );

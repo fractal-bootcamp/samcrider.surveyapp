@@ -15,7 +15,7 @@ const Component = ({ survey }: Fields) => {
           Go Home
         </a>
       </div>
-      <div className="divider divider-secondary divider-start mx-10 mt-10 uppercase text-accent">
+      <div className="divider divider-secondary divider-start mx-10 mt-10 text-accent">
         {survey.title}
       </div>
       <div className="flex flex-row flex-wrap gap-10 items-start justify-center">

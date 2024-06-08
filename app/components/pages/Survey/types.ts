@@ -15,4 +15,6 @@ export type SurveyPageProps = {
 
 export type Fields = {
   survey: Survey;
+  answers: string[];
+  setAnswers: React.Dispatch<React.SetStateAction<string[]>>;
 };

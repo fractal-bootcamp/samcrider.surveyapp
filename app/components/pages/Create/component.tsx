@@ -1,7 +1,16 @@
 import { Form } from "@remix-run/react";
 import { Fields } from "./types";
 
-const Component = ({ onClick, questions }: Fields) => {
+const Component = ({
+  onClick,
+  questions,
+  question,
+  title,
+  setTitle,
+  setQuestion,
+}: Fields) => {
+  // note that if user adds question and title, then deletes one or both, create button can still be clicked
+
   return (
     <div className="flex flex-col items-center gap-10 p-10 h-[100%]">
       <a href="/" className="text-4xl font-bold uppercase w-[100%] text-accent">
@@ -17,8 +26,8 @@ const Component = ({ onClick, questions }: Fields) => {
         </a>
       </div>
 
-      <div className="divider divider-secondary divider-start mx-10 mt-10 uppercase text-accent">
-        Create a survey
+      <div className="divider divider-secondary divider-start mx-10 mt-10 text-accent">
+        Create a Survey
       </div>
 
       <Form method="post" className="flex flex-col items-center w-[100%]">
@@ -32,6 +41,7 @@ const Component = ({ onClick, questions }: Fields) => {
               name="title"
               placeholder="Type here"
               className="input input-bordered input-primary"
+              onChange={(e) => setTitle(e.target.value)}
             />
           </label>
 
@@ -49,15 +59,26 @@ const Component = ({ onClick, questions }: Fields) => {
               name={q.name}
               placeholder="Type here"
               className="input input-bordered input-primary w-full"
+              onChange={(e) => setQuestion(e.target.value)}
             />
           </label>
         ))}
-        <button
-          type="submit"
-          className="btn btn-neutral mt-5 btn-wide text-center"
-        >
-          create
-        </button>
+        {!!title && !!question ? (
+          <button
+            type="submit"
+            className="btn btn-neutral mt-5 btn-wide text-center"
+          >
+            create
+          </button>
+        ) : (
+          <button
+            type="submit"
+            className="btn btn-neutral mt-5 btn-wide text-center"
+            disabled
+          >
+            create
+          </button>
+        )}
       </Form>
     </div>
   );
