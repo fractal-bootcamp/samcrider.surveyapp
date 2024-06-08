@@ -22,7 +22,7 @@ const Component = ({ survey }: Fields) => {
             <div className="text-2xl font-bold text-center">
               {question.question}
             </div>
-            <div className="flex flex-col h-[100%] mw-72 overflow-auto border-2 rounded-lg p-5">
+            <div className="flex flex-col h-[100%] max-w-72 overflow-auto border-2 rounded-lg p-5">
               {question.answers.map((answer) => (
                 <li key={answer.id}>{answer.answer}</li>
               ))}
