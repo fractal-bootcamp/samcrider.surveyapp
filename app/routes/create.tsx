@@ -5,7 +5,6 @@ import Create from "~/components/pages/Create";
 export const action: ActionFunction = async ({ request }) => {
   // get form data
   const data = await request.formData();
-  console.log(data);
 
   const newSurvey = await client.survey.create({
     data: {
