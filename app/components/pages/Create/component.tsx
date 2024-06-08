@@ -4,7 +4,7 @@ import { Fields } from "./types";
 const Component = ({ onClick, questions }: Fields) => {
   return (
     <div className="flex flex-col items-center gap-10 p-10 h-[100%]">
-      <a href="/" className="text-2xl font-bold uppercase w-[100%] text-accent">
+      <a href="/" className="text-4xl font-bold uppercase w-[100%] text-accent">
         Total Survey
       </a>
       <div className="flex flex-row justify-evenly">
