@@ -33,7 +33,7 @@ const Component = ({ survey }: Fields) => {
         ))}
         <button
           type="submit"
-          className="btn btn-warning mt-10 btn-wide text-center"
+          className="btn btn-accent mt-10 btn-wide text-center"
         >
           submit
         </button>

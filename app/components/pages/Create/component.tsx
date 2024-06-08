@@ -19,9 +19,9 @@ const Component = ({ onClick, questions }: Fields) => {
         Create a survey
       </div>
 
-      <Form method="post" className="flex flex-col items-center">
-        <div className="flex flex-row items-center gap-10">
-          <label className="form-control w-full max-w-xs">
+      <Form method="post" className="flex flex-col items-center w-[100%]">
+        <div className="flex flex-row justify-center items-end gap-10 w-[inherit]">
+          <label className="form-control w-[50%]">
             <div className="label">
               <span className="label-text">What is your survey name?</span>
             </div>
@@ -29,16 +29,16 @@ const Component = ({ onClick, questions }: Fields) => {
               type="text"
               name="title"
               placeholder="Type here"
-              className="input input-bordered input-gray w-full max-w-xs"
+              className="input input-bordered input-gray"
             />
           </label>
 
-          <button type="button" className="btn btn-warning" onClick={onClick}>
+          <button type="button" className="btn btn-accent" onClick={onClick}>
             add question
           </button>
         </div>
         {questions.map((q, i) => (
-          <label key={i} className="form-control w-full max-w-xs">
+          <label key={i} className="form-control w-[50%]">
             <div className="label">
               <span className="label-text">Question {i + 1}</span>
             </div>
@@ -46,13 +46,13 @@ const Component = ({ onClick, questions }: Fields) => {
               type={q.type}
               name={q.name}
               placeholder="Type here"
-              className="input input-bordered input-gray w-full max-w-xs"
+              className="input input-bordered input-gray w-full"
             />
           </label>
         ))}
         <button
           type="submit"
-          className="btn btn-warning mt-10 btn-wide text-center"
+          className="btn btn-accent mt-10 btn-wide text-center"
         >
           create
         </button>
