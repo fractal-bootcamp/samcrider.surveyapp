@@ -16,7 +16,7 @@ const Component = ({ survey }: Fields) => {
       <div className="divider divider-start mx-10 mt-10 uppercase">
         {survey.title}
       </div>
-      <div className="flex flex-row flex-wrap gap-10 items-center justify-center">
+      <div className="flex flex-row flex-wrap gap-10 items-start justify-center">
         {survey.questions.map((question, i) => (
           <div key={i}>
             <div className="text-2xl font-bold text-center">
