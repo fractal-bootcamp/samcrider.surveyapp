@@ -1,6 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import client from "~/client";
+import { useEffect, useState } from "react";
 import Home from "~/components/pages/Home";
 
 export const meta: MetaFunction = () => {
@@ -9,14 +8,33 @@ export const meta: MetaFunction = () => {
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
+const getSurveys = async () => {
+  const fetchedData = await fetch("http://localhost:4000/");
 
-export const loader = async () => {
-  const surveys = await client.survey.findMany();
-  return { surveys };
+  console.log("hello", fetchedData);
+
+  return fetchedData.json();
+};
+
+type Survey = {
+  title: string;
+  id: string;
 };
 
 export default function Index() {
-  const data = useLoaderData<typeof loader>();
+  const [surveys, setSurveys] = useState<Survey[]>([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      await getSurveys().then((res) => setSurveys(res.surveys));
+    };
+
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    console.log("rerun");
+  }, [surveys]);
 
   return (
     <div
@@ -26,7 +44,7 @@ export default function Index() {
         height: "100vh",
       }}
     >
-      <Home surveys={data.surveys} />
+      <Home surveys={surveys} />
     </div>
   );
 }
