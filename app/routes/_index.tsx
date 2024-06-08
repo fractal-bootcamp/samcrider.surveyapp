@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { useEffect, useState } from "react";
+import { useLoaderData } from "@remix-run/react";
+import client from "~/client";
 import Home from "~/components/pages/Home";
 
 // meta data
@@ -7,31 +8,13 @@ export const meta: MetaFunction = () => {
   return [{ title: "TOTAL SURVEY" }];
 };
 
-// types
-type Survey = {
-  title: string;
-  id: string;
+export const loader = async () => {
+  const surveys = await client.survey.findMany();
+  return { surveys };
 };
 
-// service
-const getSurveys = async () => {
-  const fetchedData = await fetch("http://localhost:4000/");
-
-  return fetchedData.json();
-};
-
-// client
 export default function Index() {
-  const [surveys, setSurveys] = useState<Survey[]>([]);
-
-  useEffect(() => {
-    // controller
-    const loadData = async () => {
-      await getSurveys().then((res) => setSurveys(res.surveys));
-    };
-
-    loadData();
-  }, []);
+  const data = useLoaderData<typeof loader>();
 
   return (
     <div
@@ -41,7 +24,7 @@ export default function Index() {
         height: "100vh",
       }}
     >
-      <Home surveys={surveys} />
+      <Home surveys={data.surveys} />
     </div>
   );
 }
