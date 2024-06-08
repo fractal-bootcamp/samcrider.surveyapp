@@ -1,4 +1,3 @@
-import s from "./styles.module.css";
 import { Fields } from "./types";
 
 const Component = ({ survey }: Fields) => {
