@@ -20,11 +20,11 @@ const Component = ({ survey }: Fields) => {
       </div>
       <div className="flex flex-row flex-wrap gap-10 items-start justify-center">
         {survey.questions.map((question, i) => (
-          <div key={i}>
+          <div key={i} className="flex flex-col items-center">
             <div className="text-2xl font-bold text-center text-accent">
               {question.question}
             </div>
-            <div className="flex flex-col h-[100%] max-w-72 overflow-auto border-[1px] rounded-lg text-accent border-primary p-5">
+            <div className="flex flex-col items-start h-[100%] max-w-72 overflow-auto border-[1px] rounded-lg text-accent border-primary p-5">
               {question.answers.map((answer) => (
                 <li key={answer.id}>{answer.answer}</li>
               ))}

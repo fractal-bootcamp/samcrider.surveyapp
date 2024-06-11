@@ -20,7 +20,7 @@ const Component = ({ surveys }: Fields) => {
         Surveys
       </div>
 
-      <div className="flex flex-row gap-10 flex-wrap">
+      <div className="flex flex-row gap-10 justify-center flex-wrap p-10 pt-0 overflow-auto">
         {surveys.map((survey, i) => (
           <div className="card w-96 bg-primary shadow-xl" key={i}>
             <div className="card-body ">

@@ -3,11 +3,9 @@ import { useLoaderData } from "@remix-run/react";
 import client from "~/client";
 import Home from "~/components/pages/Home";
 
+// meta data
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "TOTAL SURVEY" }];
 };
 
 export const loader = async () => {
